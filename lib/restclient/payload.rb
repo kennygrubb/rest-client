@@ -190,6 +190,8 @@ module RestClient
       def create_regular_field(s, k, v)
         s.write("Content-Disposition: form-data; name=\"#{k}\"")
         s.write(EOL)
+  	    s.write("Content-Type: application/xml")
+        s.write(EOL)
         s.write(EOL)
         s.write(v)
       end
